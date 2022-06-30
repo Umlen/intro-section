@@ -17,11 +17,12 @@ body {
   font-weight: 500;
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 4.45rem;
-  line-height: 4.45rem;
-  letter-spacing: -1.11px;
+a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 41%);
+}
+a:hover {
+  color: hsl(0deg, 0%, 0%);
 }
 
 .navbar {
@@ -31,36 +32,94 @@ h1 {
   margin: 21px 40px 0 40px;
 }
 
-.navbar-menu {
+.navbar--logo {
+  margin-right: 60px;
+}
+
+.navbar--menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
+  color: hsl(0deg, 0%, 41%);
 }
-.navbar-menu li:not(:last-child) {
+.navbar--menu li:not(:last-child) {
   padding-right: 40px;
 }
+.navbar--menu:last-of-type {
+  margin-left: auto;
+}
 
-.main-content {
+.navbar--menu_registerbtn {
+  padding: 13px 22px;
+  border: 2px solid hsl(0deg, 0%, 41%);
+  border-radius: 15px;
+}
+.navbar--menu_registerbtn:hover {
+  color: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+  border-color: hsl(0deg, 0%, 0%);
+}
+
+.maincontent {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 67px 130px 100px 165px;
 }
 
-.main-content-section {
+.maincontent--section {
   padding-right: 125px;
+  align-self: end;
 }
-.main-content-section h1, .main-content-section p {
+
+.maincontent--section_header, .maincontent--section_text {
   padding-bottom: 48px;
 }
 
-.main-content-img {
-  height: 640px;
-  width: 480px;
+.maincontent--section_header {
+  font-weight: 700;
+  font-size: 4.45rem;
+  line-height: 4.45rem;
+  letter-spacing: -1.11px;
 }
 
-.footer-info {
+.maincontent--section_text {
+  line-height: 1.55rem;
+  color: hsl(0deg, 0%, 41%);
+}
+
+.maincontent--section_button {
+  margin-bottom: 108px;
+  border-radius: 15px;
+  border: 2px solid hsl(0deg, 0%, 8%);
+  background-color: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 98%);
+  line-height: 28px;
+  padding: 15px 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.maincontent--section_button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: hsl(0deg, 0%, 8%);
+}
+
+.maincontent--section_clients {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.maincontent--section_img {
+  min-width: 480px;
+  height: auto;
+}
+
+.footer--info {
   text-align: center;
   padding: 0.5rem 0;
   font-size: small;

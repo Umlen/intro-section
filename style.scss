@@ -3,6 +3,7 @@
 $almost-white: hsl(0, 0%, 98%);
 $medium-gray: hsl(0, 0%, 41%);
 $almost-black: hsl(0, 0%, 8%);
+$absolute-black: hsl(0, 0%, 0%);
 
 * {
     margin: 0;
@@ -22,11 +23,12 @@ body {
     font-weight: 500;
 }
 
-h1 {
-    font-weight: 700;
-    font-size: 4.45rem;
-    line-height: 4.45rem;
-    letter-spacing: -1.11px;
+a {
+    text-decoration: none;
+    color: $medium-gray;
+        &:hover {
+            color: $absolute-black;
+        }
 }
 
 @mixin flex-container() {
@@ -40,32 +42,86 @@ h1 {
     margin: 21px 40px 0 40px;
 }
 
-.navbar-menu {
+.navbar--logo {
+    margin-right: 60px;
+}
+
+.navbar--menu {
     @include flex-container();
     list-style-type: none;
+    color: $medium-gray;
     & li:not(:last-child) {
         padding-right: 40px;
     }
+    &:last-of-type {
+        margin-left: auto;
+    }
 }
 
-.main-content {
+.navbar--menu_registerbtn {
+    padding: 13px 22px;
+    border: 2px solid $medium-gray;
+    border-radius: 15px;
+    &:hover {
+        color: $absolute-black;
+        cursor: pointer;
+        border-color: $absolute-black;
+    }
+}
+
+.maincontent {
     @include flex-container();
     margin: 67px 130px 100px 165px;
 }
 
-.main-content-section {
-    padding-right: 125px;
-    & h1, p {
-        padding-bottom: 48px;
+.maincontent--section {
+   padding-right: 125px;
+   align-self: end;
+}
+
+.maincontent--section_header, .maincontent--section_text {
+    padding-bottom: 48px;
+}
+
+.maincontent--section_header {
+    font-weight: 700;
+    font-size: 4.45rem;
+    line-height: 4.45rem;
+    letter-spacing: -1.11px;
+}
+
+.maincontent--section_text {
+    line-height: 1.55rem;
+    color: $medium-gray;
+}
+
+.maincontent--section_button {
+    margin-bottom: 108px;
+    border-radius: 15px;
+    border: 2px solid $almost-black;
+    background-color: $almost-black;
+    color: $almost-white;
+    line-height: 28px;
+    padding: 15px 30px;
+    width: fit-content;
+    &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: $almost-black;
     }
 }
 
-.main-content-img {
-    height: 640px;
-    width: 480px;
+.maincontent--section_clients {
+    @include flex-container();
+    list-style-type: none;
 }
 
-.footer-info {
+.maincontent--section_img {
+    min-width: 480px;
+    height: auto;
+}
+
+.footer--info {
     text-align: center;
     padding: .5rem 0;
     font-size: small;
