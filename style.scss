@@ -4,6 +4,7 @@ $almost-white: hsl(0, 0%, 98%);
 $medium-gray: hsl(0, 0%, 41%);
 $almost-black: hsl(0, 0%, 8%);
 $absolute-black: hsl(0, 0%, 0%);
+$absolute-white: hsl(100, 100%, 100%);
 
 * {
     margin: 0;
@@ -31,6 +32,10 @@ a {
         }
 }
 
+.hide {
+    display: none;
+}
+
 @mixin flex-container() {
     display: flex;
     align-items: center;
@@ -55,6 +60,46 @@ a {
     }
     &:last-of-type {
         margin-left: auto;
+    }
+}
+
+.navbar--menu--dropdown {
+    @include flex-container();
+    position: relative;
+    & .navbar--menu--dropdown_iconup,  
+      .navbar--menu--dropdown_icondown{
+        margin-left: 1rem;
+        stroke: $medium-gray;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    & p:hover { 
+        color: $absolute-black;
+        & ~ .navbar--menu--dropdown_iconup, 
+          ~ .navbar--menu--dropdown_icondown {
+            stroke: $absolute-black;
+        }
+    }
+}
+
+.navbar--menu--dropdown_list {
+    background-color: $absolute-white;
+    border-radius: 10px;
+    padding: 25px;
+    position: absolute;
+    left: 0;
+    right: -2rem;
+    top: 200%;
+    box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 25%);
+    & p:not(:last-child) {
+        padding-bottom: 16px;
+    }
+    & p {
+        @include flex-container();
+        & svg {
+            margin-right: .5rem;
+        }
     }
 }
 

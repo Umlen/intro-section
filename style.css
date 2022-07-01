@@ -25,6 +25,10 @@ a:hover {
   color: hsl(0deg, 0%, 0%);
 }
 
+.hide {
+  display: none;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -48,6 +52,50 @@ a:hover {
 }
 .navbar--menu:last-of-type {
   margin-left: auto;
+}
+
+.navbar--menu--dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.navbar--menu--dropdown .navbar--menu--dropdown_iconup,
+.navbar--menu--dropdown .navbar--menu--dropdown_icondown {
+  margin-left: 1rem;
+  stroke: hsl(0deg, 0%, 41%);
+}
+.navbar--menu--dropdown:hover {
+  cursor: pointer;
+}
+.navbar--menu--dropdown p:hover {
+  color: hsl(0deg, 0%, 0%);
+}
+.navbar--menu--dropdown p:hover ~ .navbar--menu--dropdown_iconup,
+.navbar--menu--dropdown p:hover ~ .navbar--menu--dropdown_icondown {
+  stroke: hsl(0deg, 0%, 0%);
+}
+
+.navbar--menu--dropdown_list {
+  background-color: hsl(100deg, 100%, 100%);
+  border-radius: 10px;
+  padding: 25px;
+  position: absolute;
+  left: 0;
+  right: -2rem;
+  top: 200%;
+  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.25);
+}
+.navbar--menu--dropdown_list p:not(:last-child) {
+  padding-bottom: 16px;
+}
+.navbar--menu--dropdown_list p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar--menu--dropdown_list p svg {
+  margin-right: 0.5rem;
 }
 
 .navbar--menu_registerbtn {
