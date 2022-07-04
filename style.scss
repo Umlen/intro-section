@@ -53,6 +53,7 @@ a {
 
 .navbar--menu {
     @include flex-container();
+    font-size: .88rem;
     list-style-type: none;
     color: $medium-gray;
     & li:not(:last-child) {
@@ -68,7 +69,7 @@ a {
     position: relative;
     & .navbar--menu--dropdown_iconup,  
       .navbar--menu--dropdown_icondown{
-        margin-left: 1rem;
+        margin-left: .5rem;
         stroke: $medium-gray;
     }
     &:hover {
@@ -89,7 +90,6 @@ a {
     padding: 25px;
     position: absolute;
     left: 0;
-    right: -2rem;
     top: 200%;
     box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 25%);
     & p:not(:last-child) {
@@ -97,10 +97,18 @@ a {
     }
     & p {
         @include flex-container();
+        justify-content: stretch;
+        font-size: .77rem;
         & svg {
             margin-right: .5rem;
         }
     }
+}
+
+/*for normal alignment of the first dropdown list*/
+#first-dropdown-elem{
+    right: 40px;
+    left: auto;
 }
 
 .navbar--menu_registerbtn {
@@ -170,4 +178,105 @@ a {
     text-align: center;
     padding: .5rem 0;
     font-size: small;
+}
+
+@media (max-width: 1024px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    .maincontent {
+        margin: 67px 65px 100px 82px;
+    }
+
+    .maincontent--section {
+        padding-right: 62px;
+     }
+
+    .maincontent--section_img {
+        min-width: 360px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .maincontent {
+        margin: 67px 30px 100px 40px;
+    }
+
+    .maincontent--section {
+        padding-right: 30px;
+     }
+
+    .maincontent--section_img {
+        min-width: 300px;
+        height: auto;
+    }
+
+    .navbar--logo {
+        margin-right: 30px;
+    }
+    
+    .navbar--menu {
+        & li:not(:last-child) {
+            padding-right: 20px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    .maincontent {
+        margin: 24px 0;
+        flex-direction: column;
+    }
+
+    .maincontent--section {
+        margin: 48px 16px;
+        padding: 0;
+        order: 1;
+        align-self: auto;
+     }
+
+    .maincontent--section_header {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+        text-align: center;
+        padding-bottom: 16px;
+    }
+
+    .maincontent--section_text {
+        text-align: center;
+        padding-bottom: 24px;
+    }
+
+    .maincontent--section_button {
+        margin: auto;
+        margin-bottom: 48px;
+    }
+
+    .maincontent--section_img {
+        max-width: 100%;
+        height: auto;
+        order: 0;
+    }
+
+    /*
+    .maincontent--section {
+        padding-right: 30px;
+     }
+
+
+
+    .navbar--logo {
+        margin-right: 30px;
+    }
+    
+    .navbar--menu {
+        & li:not(:last-child) {
+            padding-right: 20px;
+        }
+    }*/
 }
