@@ -246,6 +246,11 @@ a {
     box-shadow: none;
 }
 
+#first-dropdown-elem_mobile{
+    right: auto;
+    left: auto;
+}
+
 /*style for mobile screen END!!*/
 
 .hide {
@@ -304,11 +309,6 @@ a {
         & p {
             justify-content: stretch;
         }
-    }
-
-    #first-dropdown-elem{
-        right: auto;
-        left: auto;
     }
 
     .maincontent {

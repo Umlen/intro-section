@@ -72,16 +72,16 @@
       </li>
 
       <li>
-        <a href = "#" alt = "Careers page">Careers</a>
+        <a href = "#" >Careers</a>
       </li>
       <li>
-        <a href = "#" alt = "About page">About</a>
+        <a href = "#">About</a>
       </li>
     </ul>
 
     <ul class = "navbar--menu">
       <li>
-       <a href = "#" alt = "Loging page">Login</a>
+       <a href = "#">Login</a>
       </li>
       <li class = "navbar--menu_registerbtn">Register</li>
     </ul>
@@ -116,7 +116,7 @@
               <path stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/>
             </svg>
           </p>
-          <div class = "navbar--menu--dropdown_list navbar--menu--dropdown_list_mobile hide" id = "first-dropdown-elem">
+          <div class = "navbar--menu--dropdown_list navbar--menu--dropdown_list_mobile hide" id = "first-dropdown-elem_mobile">
             <p>
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 3v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1V1a1 1 0 1 1 2 0v1h2V1a1 1 0 1 1 2 0v1h2V1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 1 1Zm-2 3H2v1h10V6Zm0 3H2v1h10V9Zm0 3H2v1h10v-1Z" fill="#726CEE"/>
@@ -162,16 +162,16 @@
         </li>
 
         <li>
-          <a href = "#" alt = "Careers page">Careers</a>
+          <a href = "#">Careers</a>
         </li>
         <li>
-          <a href = "#" alt = "About page">About</a>
+          <a href = "#">About</a>
         </li>
       </ul>
 
       <ul class = "navbar--menu navbar--menu_mobile">
         <li>
-        <a href = "#" alt = "Loging page">Login</a>
+        <a href = "#">Login</a>
         </li>
         <li class = "navbar--menu_registerbtn">Register</li>
       </ul>
@@ -212,8 +212,12 @@
       </ul>
     </section>
     <img class = "maincontent--section_img" 
-      srcset = "images/image-hero-mobile.png 480w,
-                images/image-hero-desktop.png 768w"
+      sizes = " (max-width: 480px) 100vw,
+                (max-width: 768px) 300px,
+                (max-width: 1024px) 360px,
+                100vw"
+      srcset = "images/image-hero-mobile.png 750w,
+                images/image-hero-desktop.png 960w"
       src = "images/image-hero-desktop.png" alt = "a freelancer with a laptop"
     />
   </main>

@@ -246,6 +246,11 @@ a:hover {
   box-shadow: none;
 }
 
+#first-dropdown-elem_mobile {
+  right: auto;
+  left: auto;
+}
+
 /*style for mobile screen END!!*/
 .hide {
   display: none;
@@ -294,11 +299,6 @@ a:hover {
 @media (max-width: 480px) {
   .navbar--menu--dropdown p {
     justify-content: stretch;
-  }
-
-  #first-dropdown-elem {
-    right: auto;
-    left: auto;
   }
 
   .maincontent {
