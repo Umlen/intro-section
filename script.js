@@ -2,13 +2,11 @@ window.onload = function() {
 
     screenWidthCheck();
 
-    let features = document.getElementById('dropdown_features');
-    features.addEventListener('click', dropdownMenu);
-    features.addEventListener('mousedown', preventSelection);
-
-    let company = document.getElementById('dropdown_company');
-    company.addEventListener('click', dropdownMenu);
-    company.addEventListener('mousedown', preventSelection);
+    let dropdownItems = document.querySelectorAll('.navbar--menu--dropdown p');
+    for (let item of dropdownItems) {
+        item.addEventListener('click', dropdownMenu);
+        item.addEventListener('mousedown', preventSelection);
+    }
 
     let openMenuBtn = document.getElementById('open-mobile-menu');
     openMenuBtn.addEventListener('click', openMobileMenu);
@@ -18,15 +16,14 @@ window.onload = function() {
 };
 
 const dropdownMenu = (event) => {
-    event.preventDefault();
     let parentElem = event.currentTarget;
     let arrowDown = parentElem.querySelector('.navbar--menu--dropdown_icondown');
     let arrowUp = parentElem.querySelector('.navbar--menu--dropdown_iconup');
-    let menuList = parentElem.querySelector('.navbar--menu--dropdown_list');
+    let menuList = parentElem.nextElementSibling;
     arrowUp.classList.toggle('hide');
     arrowDown.classList.toggle('hide');
     menuList.classList.toggle('hide');
-};
+}
 
 const preventSelection = (event) => {
     event.preventDefault();
@@ -45,8 +42,16 @@ const screenWidthCheck = () => {
 
 const openMobileMenu = () => {
     document.querySelector('.navbar--mobilemenu_wrapper').classList.remove('hide');
+    document.getElementById('open-mobile-menu').classList.add('hide');
+    document.body.classList.add('darkfilter');
+    console.log(document.body.classList);
+    console.log(document.body);
 };
 
 const closeMobileMenu = () => {
     document.querySelector('.navbar--mobilemenu_wrapper').classList.add('hide');
+    document.getElementById('open-mobile-menu').classList.remove('hide');
+    document.body.classList.remove('darkfilter');
+    console.log(document.body.classList);
+    console.log(document.body);
 };
